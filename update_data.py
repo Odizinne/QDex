@@ -2,6 +2,10 @@ import json
 import os
 import requests
 
+# Define base directory for sprites
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+SPRITES_DIR = os.path.join(BASE_DIR, 'sprites')
+
 def fetch_pokemon_details(pokemon_index):
     """Fetch details for a specific Pokémon from the API and save sprites."""
     url = f"https://pokeapi.co/api/v2/pokemon/{pokemon_index}"
@@ -18,20 +22,19 @@ def fetch_pokemon_details(pokemon_index):
             # Fetch normal sprite
             sprite_url = data['sprites']['front_default']
             sprite_filename = f"pokemon_{pokemon_index}.png"
-            sprite_path = os.path.join(os.path.dirname(__file__), 'sprites', sprite_filename)
+            sprite_path = os.path.join(SPRITES_DIR, sprite_filename)
             download_and_save_sprite(sprite_url, sprite_path)
 
             # Fetch shiny sprite if available
             shiny_sprite_path = None
-            if 'versions' in data['sprites'] and 'generation-viii' in data['sprites']['versions']['generation-viii']:
-                shiny_sprite_url = data['sprites']['versions']['generation-viii']['icons']['front_default']
+            if 'front_shiny' in data['sprites'] and data['sprites']['front_shiny']:
+                shiny_sprite_url = data['sprites']['front_shiny']
                 shiny_sprite_filename = f"pokemon_{pokemon_index}_shiny.png"
-                shiny_sprite_path = os.path.join(os.path.dirname(__file__), 'sprites', shiny_sprite_filename)
+                shiny_sprite_path = os.path.join(SPRITES_DIR, shiny_sprite_filename)
                 download_and_save_sprite(shiny_sprite_url, shiny_sprite_path)
             
             pokemon_details = extract_pokemon_details(data, species_data)
-            pokemon_details['sprite_path'] = sprite_path
-            pokemon_details['shiny_sprite_path'] = shiny_sprite_path  # Add shiny sprite path if available
+            pokemon_details['sprite_path'] = f"./sprites/{sprite_filename}"
             pokemon_details['descriptions'] = fetch_pokemon_descriptions(species_data)
             pokemon_details['national_pokedex_number'] = species_data['id']
 
@@ -125,11 +128,8 @@ def fetch_and_save_abilities(limit=None, output_file="abilities.json"):
     print(f"Abilities have been refreshed and saved to {output_file}.")
 
 if __name__ == "__main__":
-    sprites_dir = os.path.join(os.path.dirname(__file__), 'sprites')
-    if not os.path.exists(sprites_dir):
-        os.makedirs(sprites_dir)
+    if not os.path.exists(SPRITES_DIR):
+        os.makedirs(SPRITES_DIR)
         
-    fetch_and_save_all_pokemon_details()
-    fetch_and_save_abilities()
-    #fetch_and_save_all_pokemon_details(limit=10)
-    #fetch_and_save_abilities(limit=15)
+    fetch_and_save_all_pokemon_details(limit=0)
+    fetch_and_save_abilities(limit=0)
