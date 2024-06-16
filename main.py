@@ -1,8 +1,9 @@
 import sys
 import os
 import json
+import random
 from PyQt5 import QtWidgets, uic, QtCore
-from PyQt5.QtGui import QPixmap, QStandardItemModel, QStandardItem, QFont
+from PyQt5.QtGui import QPixmap, QStandardItemModel, QStandardItem, QFontDatabase, QFont
 from PyQt5.QtCore import Qt
 
 from unidecode import unidecode
@@ -17,21 +18,42 @@ class PokemonApp(QtWidgets.QMainWindow):
         uic.loadUi('design.ui', self)
 
         self.setWindowTitle("QDex")
-
         self.init_ui_components()
         self.configure_progress_bars()
-
         self.data = {}
         self.abilities = {}
         self.available_languages = []
-
         self.current_language = self.load_language_setting()
         self.load_data()
-
+        self.load_custom_font()
         self.languageComboBox.currentIndexChanged.connect(self.handle_language_change)
-        self.pokemonTableView.clicked.connect(self.on_table_view_clicked)
+        self.randomButton.clicked.connect(self.select_random_pokemon)
+        self.pokemonTableView.selectionModel().currentChanged.connect(self.on_table_selection_changed)
 
-        QtCore.QTimer.singleShot(0, self.set_window_size_constraints)
+    def load_custom_font(self):
+        """Load and set the custom font from the font folder."""
+        font_path = os.path.join('font', 'pokemon-emerald-pro.otf')
+        print(font_path)
+        font_id = QFontDatabase.addApplicationFont(font_path)
+        if font_id == -1:
+            print("Failed to load custom font.")
+        else:
+            font_family = QFontDatabase.applicationFontFamilies(font_id)[0]
+            self.set_font_for_application(font_family)
+
+    def set_font_for_application(self, font_family):
+        """Set the custom font for the application."""
+        custom_font = QFont(font_family)
+        custom_font_title = QFont(font_family)
+        custom_font.setPointSize(20)
+        custom_font_title.setPointSize(30)
+        custom_font_title.setBold(True) 
+        self.setFont(custom_font)
+        self.pokemonLabel.setFont(custom_font)
+        self.searchBar.setFont(custom_font)
+        self.descLabel.setFont(custom_font)
+        self.languageComboBox.setFont(custom_font)
+        self.pokemonLabel.setFont(custom_font_title)
 
     def set_window_size_constraints(self):
         """Set minimum and maximum size constraints for the window."""
@@ -53,12 +75,13 @@ class PokemonApp(QtWidgets.QMainWindow):
         ]
         self.type1Label = self.findChild(QtWidgets.QLabel, 'type1Label')
         self.type2Label = self.findChild(QtWidgets.QLabel, 'type2Label')
-
         self.searchBar = self.findChild(QtWidgets.QLineEdit, 'searchBar')
         self.searchBar.setPlaceholderText("Search Pokémon by name...")
         self.searchBar.textChanged.connect(self.filter_table)
-
         self.languageComboBox = self.findChild(QtWidgets.QComboBox, 'languageComboBox')
+        self.randomButton = self.findChild(QtWidgets.QPushButton, 'randomButton')
+        self.descLabel = self.findChild(QtWidgets.QLabel, 'descLabel')
+        self.descLabel.setWordWrap(True)
 
     def configure_progress_bars(self):
         """Configure the stat progress bars."""
@@ -70,6 +93,24 @@ class PokemonApp(QtWidgets.QMainWindow):
             bar.setTextVisible(True)
             bar.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
 
+    def wrap_text(self, text, max_chars_per_line):
+        """Wrap the text to a specific number of characters per line."""
+        words = text.split()
+        lines = []
+        current_line = []
+
+        for word in words:
+            if len(' '.join(current_line + [word])) > max_chars_per_line:
+                lines.append(' '.join(current_line))
+                current_line = [word]
+            else:
+                current_line.append(word)
+
+        if current_line:
+            lines.append(' '.join(current_line))
+
+        return '\n'.join(lines)
+    
     def populate_language_combobox(self):
         """Populate the language selection ComboBox."""
         self.languageComboBox.clear()
@@ -127,7 +168,7 @@ class PokemonApp(QtWidgets.QMainWindow):
     def setup_table(self, data):
         """Setup the table view with Pokémon data."""
         model = NonEditableModel()
-        model.setHorizontalHeaderLabels(['Name'])
+        model.setHorizontalHeaderLabels([''])
 
         for details in data.values():
             name = details['names'].get(self.current_language, 'N/A')
@@ -141,6 +182,8 @@ class PokemonApp(QtWidgets.QMainWindow):
             first_index = model.index(0, 0)
             self.pokemonTableView.selectionModel().select(first_index, QtCore.QItemSelectionModel.Select)
             self.update_ui_with_selected_pokemon(first_index)
+
+        self.pokemonTableView.selectionModel().currentChanged.connect(self.on_table_selection_changed)
 
     def load_language_setting(self):
         """Load the saved language setting."""
@@ -166,26 +209,23 @@ class PokemonApp(QtWidgets.QMainWindow):
             pokemon_index = index.row() + 1
             pokemon_name = item.text()
             self.pokemonLabel.setText(pokemon_name)
-
             pokemon_details = self.data.get(f"pokemon_{pokemon_index}", {})
             self.update_abilities(pokemon_details.get('abilities', []))
             self.update_types(pokemon_details.get('types', []))
             self.update_stats(pokemon_details.get('stats', []))
             self.load_and_display_sprite(pokemon_details.get('sprite_path', ''))
             self.display_description(pokemon_details.get('descriptions', {}))
-
-            # Display National Pokédex number if available
             national_pokedex_number = pokemon_details.get('national_pokedex_number', 'N/A')
             self.dexLabel.setText(f"N. {national_pokedex_number}")
 
         else:
             self.clear_pokemon_details()
 
-
     def display_description(self, descriptions):
         """Display Pokémon description based on current language."""
         description = descriptions.get(self.current_language, 'Description not available')
-        self.descLabel.setText(description)
+        wrapped_description = self.wrap_text(description, max_chars_per_line=50)  # Adjust as needed
+        self.descLabel.setText(wrapped_description)
 
     def load_and_display_sprite(self, sprite_path):
         """Load and display Pokémon sprite."""
@@ -194,10 +234,6 @@ class PokemonApp(QtWidgets.QMainWindow):
             if not pixmap.isNull():
                 pixmap = pixmap.scaled(384, 384)
                 self.spriteLabel.setPixmap(pixmap)
-                #self.spriteLabel.setAlignment(Qt.AlignCenter)  # Ensure alignment is set after setting pixmap
-                #self.spriteLabel.setFixedSize(192, 192)  # Adjust size if necessary
-                #self.spriteLabel.setScaledContents(False)
-                #self.spriteLabel.setFixedSize(pixmap.size())  # Ensure label size matches pixmap size
             else:
                 print(f"Failed to load pixmap from {sprite_path}")
         else:
@@ -215,13 +251,13 @@ class PokemonApp(QtWidgets.QMainWindow):
                 ability_info = self.abilities.get(ability_name, {})
                 ability_display_name = ability_info.get(self.current_language, 'N/A')
             else:
-                ability_display_name = ''  # Empty text if ability doesn't exist for this index
+                ability_display_name = '' 
 
             ability_labels[i].setText(ability_display_name)
-            ability_labels[i].setVisible(True)  # Always set visible
+            ability_labels[i].setVisible(True)
 
         for j in range(len(abilities), 3):
-            ability_labels[j].setText('')  # Clear any extra labels beyond actual abilities
+            ability_labels[j].setText('')
             ability_labels[j].setVisible(False)
 
     def update_types(self, types):
@@ -262,7 +298,7 @@ class PokemonApp(QtWidgets.QMainWindow):
         """Load an image from the given path and display it on the label."""
         pixmap = QPixmap(image_path)
         if not pixmap.isNull():
-            pixmap = pixmap.scaled(32, 32)
+            pixmap = pixmap.scaled(64, 64)
             label.setPixmap(pixmap)
             label.setAlignment(Qt.AlignCenter)
             label.setScaledContents(False)
@@ -273,6 +309,25 @@ class PokemonApp(QtWidgets.QMainWindow):
     def on_table_view_clicked(self, index):
         """Handle table view click event to update UI with selected Pokémon."""
         self.update_ui_with_selected_pokemon(index)
+
+    def on_table_selection_changed(self, current, previous):
+        """Handle selection change to update UI with selected Pokémon."""
+        self.update_ui_with_selected_pokemon(current)
+
+    def select_random_pokemon(self):
+        """Select a random Pokémon from the table view."""
+        model = self.pokemonTableView.model()
+        row_count = model.rowCount()
+
+        if row_count == 0:
+            print("No Pokémon available to select.")
+            return
+
+        random_row = random.randint(0, row_count - 1)
+        random_index = model.index(random_row, 0)
+        self.pokemonTableView.setCurrentIndex(random_index)
+        self.pokemonTableView.scrollTo(random_index)
+        self.update_ui_with_selected_pokemon(random_index)
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)

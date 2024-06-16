@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>725</width>
-    <height>526</height>
+    <width>914</width>
+    <height>565</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -71,6 +71,16 @@
        <property name="rightMargin">
         <number>6</number>
        </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QPushButton" name="randomButton">
+         <property name="text">
+          <string>Random</string>
+         </property>
+        </widget>
+       </item>
        <item>
         <widget class="QLineEdit" name="searchBar">
          <property name="sizePolicy">
@@ -104,24 +114,23 @@
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QGridLayout" name="typeGrid">
-         <item row="0" column="2">
-          <widget class="QFrame" name="gridFrame">
-           <layout class="QGridLayout" name="gridLayout_5">
-            <item row="0" column="0">
-             <widget class="QLabel" name="type1Label">
-              <property name="text">
-               <string>type 1</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
          <item row="0" column="3">
           <widget class="QFrame" name="gridFrame_2">
            <layout class="QGridLayout" name="gridLayout_7">
             <item row="0" column="0">
              <widget class="QLabel" name="type2Label">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>64</width>
+                <height>64</height>
+               </size>
+              </property>
               <property name="text">
                <string>type 2</string>
               </property>
@@ -148,19 +157,6 @@
             <property name="spacing">
              <number>0</number>
             </property>
-            <item row="0" column="0">
-             <spacer name="verticalSpacer_2">
-              <property name="orientation">
-               <enum>Qt::Vertical</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>20</width>
-                <height>1</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
             <item row="2" column="0">
              <spacer name="verticalSpacer">
               <property name="orientation">
@@ -182,6 +178,12 @@
                 <verstretch>0</verstretch>
                </sizepolicy>
               </property>
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="font">
                <font>
                 <weight>75</weight>
@@ -193,18 +195,49 @@
               </property>
              </widget>
             </item>
-            <item row="1" column="1">
-             <spacer name="horizontalSpacer">
+            <item row="0" column="0">
+             <spacer name="verticalSpacer_2">
               <property name="orientation">
-               <enum>Qt::Horizontal</enum>
+               <enum>Qt::Vertical</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
-                <width>40</width>
-                <height>20</height>
+                <width>20</width>
+                <height>1</height>
                </size>
               </property>
              </spacer>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QFrame" name="gridFrame">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_5">
+            <item row="0" column="0">
+             <widget class="QLabel" name="type1Label">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>64</width>
+                <height>64</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>type 1</string>
+              </property>
+             </widget>
             </item>
            </layout>
           </widget>
@@ -223,6 +256,12 @@
         <layout class="QGridLayout" name="gridLayout_9">
          <item row="0" column="1">
           <widget class="QLabel" name="pokemonLabel">
+           <property name="minimumSize">
+            <size>
+             <width>400</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="font">
             <font>
              <pointsize>17</pointsize>
@@ -246,6 +285,12 @@
          </item>
          <item row="0" column="0">
           <widget class="QLabel" name="dexLabel">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="font">
             <font>
              <weight>75</weight>
@@ -271,6 +316,12 @@
         <layout class="QGridLayout" name="abilityLayout">
          <item row="0" column="0">
           <widget class="QLabel" name="ability1Label">
+           <property name="minimumSize">
+            <size>
+             <width>150</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="font">
             <font>
              <weight>75</weight>
@@ -296,6 +347,12 @@
         <layout class="QGridLayout" name="gridLayout_4">
          <item row="0" column="0">
           <widget class="QLabel" name="ability3Label">
+           <property name="minimumSize">
+            <size>
+             <width>150</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="font">
             <font>
              <weight>75</weight>
@@ -456,6 +513,18 @@
             </item>
             <item row="0" column="0">
              <widget class="QLabel" name="hpLabel">
+              <property name="minimumSize">
+               <size>
+                <width>50</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="baseSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="font">
                <font>
                 <weight>75</weight>
@@ -510,6 +579,12 @@
         <layout class="QGridLayout" name="ability2Frame">
          <item row="0" column="0">
           <widget class="QLabel" name="ability2Label">
+           <property name="minimumSize">
+            <size>
+             <width>150</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="font">
             <font>
              <weight>75</weight>
@@ -561,7 +636,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>725</width>
+     <width>914</width>
      <height>24</height>
     </rect>
    </property>
