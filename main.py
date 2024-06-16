@@ -29,6 +29,7 @@ class PokemonApp(QtWidgets.QMainWindow):
         self.languageComboBox.currentIndexChanged.connect(self.handle_language_change)
         self.randomButton.clicked.connect(self.select_random_pokemon)
         self.pokemonTableView.selectionModel().currentChanged.connect(self.on_table_selection_changed)
+        QtCore.QTimer.singleShot(0, self.set_window_size_constraints)
 
     def load_custom_font(self):
         """Load and set the custom font from the font folder."""
