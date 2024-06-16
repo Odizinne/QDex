@@ -3,7 +3,7 @@ import os
 import requests
 
 def fetch_pokemon_details(pokemon_index):
-    """Fetch details for a specific Pokémon from the API and save sprite."""
+    """Fetch details for a specific Pokémon from the API and save sprites."""
     url = f"https://pokeapi.co/api/v2/pokemon/{pokemon_index}"
     response = requests.get(url)
 
@@ -14,14 +14,24 @@ def fetch_pokemon_details(pokemon_index):
         
         if species_response.status_code == 200:
             species_data = species_response.json()
-            sprite_url = data['sprites']['front_default']
 
+            # Fetch normal sprite
+            sprite_url = data['sprites']['front_default']
             sprite_filename = f"pokemon_{pokemon_index}.png"
             sprite_path = os.path.join(os.path.dirname(__file__), 'sprites', sprite_filename)
             download_and_save_sprite(sprite_url, sprite_path)
+
+            # Fetch shiny sprite if available
+            shiny_sprite_path = None
+            if 'versions' in data['sprites'] and 'generation-viii' in data['sprites']['versions']['generation-viii']:
+                shiny_sprite_url = data['sprites']['versions']['generation-viii']['icons']['front_default']
+                shiny_sprite_filename = f"pokemon_{pokemon_index}_shiny.png"
+                shiny_sprite_path = os.path.join(os.path.dirname(__file__), 'sprites', shiny_sprite_filename)
+                download_and_save_sprite(shiny_sprite_url, shiny_sprite_path)
             
             pokemon_details = extract_pokemon_details(data, species_data)
             pokemon_details['sprite_path'] = sprite_path
+            pokemon_details['shiny_sprite_path'] = shiny_sprite_path  # Add shiny sprite path if available
             pokemon_details['descriptions'] = fetch_pokemon_descriptions(species_data)
             pokemon_details['national_pokedex_number'] = species_data['id']
 
@@ -31,7 +41,6 @@ def fetch_pokemon_details(pokemon_index):
     else:
         print(f"Failed to retrieve data for Pokemon index {pokemon_index}: {response.status_code}")
     return None
-
 
 def fetch_pokemon_descriptions(species_data):
     """Fetch Pokémon descriptions in all available languages."""
@@ -57,7 +66,6 @@ def extract_pokemon_details(data, species_data):
     pokemon_details['descriptions'] = fetch_pokemon_descriptions(species_data)
 
     return pokemon_details
-
 
 def download_and_save_sprite(sprite_url, sprite_path):
     """Download sprite from URL and save it to sprite_path."""
@@ -90,7 +98,7 @@ def fetch_and_save_all_pokemon_details(limit=None, output_file="pokemon_details.
         json.dump(all_pokemon_details, f, indent=4)
     
     print(f"Pokemon details have been saved to {output_file}.")
-    
+
 def fetch_and_save_abilities(limit=None, output_file="abilities.json"):
     """Fetch abilities data from the API up to the specified limit and save to a file."""
     abilities = {}
@@ -123,5 +131,5 @@ if __name__ == "__main__":
         
     fetch_and_save_all_pokemon_details()
     fetch_and_save_abilities()
-    #fetch_and_save_all_pokemon_details(limit=30)
+    #fetch_and_save_all_pokemon_details(limit=10)
     #fetch_and_save_abilities(limit=15)

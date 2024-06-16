@@ -29,7 +29,12 @@ class PokemonApp(QtWidgets.QMainWindow):
         self.languageComboBox.currentIndexChanged.connect(self.handle_language_change)
         self.randomButton.clicked.connect(self.select_random_pokemon)
         self.pokemonTableView.selectionModel().currentChanged.connect(self.on_table_selection_changed)
-        QtCore.QTimer.singleShot(0, self.set_window_size_constraints)
+        self.show_shiny = False
+        self.shinyCheckbox = self.findChild(QtWidgets.QCheckBox, 'shinyCheckbox')
+        self.shinyCheckbox.toggled.connect(self.toggle_shiny_sprite)
+
+        self.show_shiny = False  # Initialize show_shiny attribute
+        self.setup_initial_selection()
 
     def load_custom_font(self):
         """Load and set the custom font from the font folder."""
@@ -55,11 +60,6 @@ class PokemonApp(QtWidgets.QMainWindow):
         self.descLabel.setFont(custom_font)
         self.languageComboBox.setFont(custom_font)
         self.pokemonLabel.setFont(custom_font_title)
-
-    def set_window_size_constraints(self):
-        """Set minimum and maximum size constraints for the window."""
-        self.setMinimumSize(self.size())
-        self.setMaximumSize(self.size())
 
     def init_ui_components(self):
         """Initialize UI components and their connections."""
@@ -181,7 +181,7 @@ class PokemonApp(QtWidgets.QMainWindow):
 
         if model.rowCount() > 0:
             first_index = model.index(0, 0)
-            self.pokemonTableView.selectionModel().select(first_index, QtCore.QItemSelectionModel.Select)
+            self.pokemonTableView.setCurrentIndex(first_index)
             self.update_ui_with_selected_pokemon(first_index)
 
         self.pokemonTableView.selectionModel().currentChanged.connect(self.on_table_selection_changed)
@@ -218,7 +218,6 @@ class PokemonApp(QtWidgets.QMainWindow):
             self.display_description(pokemon_details.get('descriptions', {}))
             national_pokedex_number = pokemon_details.get('national_pokedex_number', 'N/A')
             self.dexLabel.setText(f"N. {national_pokedex_number}")
-
         else:
             self.clear_pokemon_details()
 
@@ -229,7 +228,12 @@ class PokemonApp(QtWidgets.QMainWindow):
         self.descLabel.setText(wrapped_description)
 
     def load_and_display_sprite(self, sprite_path):
-        """Load and display Pokémon sprite."""
+        """Load and display Pokémon sprite based on shiny toggle."""
+        if self.show_shiny:
+            shiny_sprite_path = sprite_path.replace('.png', '_shiny.png')
+            if os.path.exists(shiny_sprite_path):
+                sprite_path = shiny_sprite_path
+
         if sprite_path and os.path.exists(sprite_path):
             pixmap = QPixmap(sprite_path)
             if not pixmap.isNull():
@@ -252,7 +256,7 @@ class PokemonApp(QtWidgets.QMainWindow):
                 ability_info = self.abilities.get(ability_name, {})
                 ability_display_name = ability_info.get(self.current_language, 'N/A')
             else:
-                ability_display_name = '' 
+                ability_display_name = ''
 
             ability_labels[i].setText(ability_display_name)
             ability_labels[i].setVisible(True)
@@ -307,9 +311,11 @@ class PokemonApp(QtWidgets.QMainWindow):
         else:
             print(f"Failed to load image from path: {image_path}")
 
-    def on_table_view_clicked(self, index):
-        """Handle table view click event to update UI with selected Pokémon."""
-        self.update_ui_with_selected_pokemon(index)
+    def toggle_shiny_sprite(self, checked):
+        """Toggle between showing normal and shiny sprites."""
+        self.show_shiny = checked
+        # Reload the currently selected Pokémon details
+        self.update_ui_with_selected_pokemon(self.pokemonTableView.currentIndex())
 
     def on_table_selection_changed(self, current, previous):
         """Handle selection change to update UI with selected Pokémon."""
@@ -329,6 +335,14 @@ class PokemonApp(QtWidgets.QMainWindow):
         self.pokemonTableView.setCurrentIndex(random_index)
         self.pokemonTableView.scrollTo(random_index)
         self.update_ui_with_selected_pokemon(random_index)
+
+    def setup_initial_selection(self):
+        """Setup initial selection to the first Pokémon in the table."""
+        model = self.pokemonTableView.model()
+        if model.rowCount() > 0:
+            first_index = model.index(0, 0)
+            self.pokemonTableView.setCurrentIndex(first_index)
+            self.update_ui_with_selected_pokemon(first_index)
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)

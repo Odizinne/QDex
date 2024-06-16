@@ -66,6 +66,13 @@
         </widget>
        </item>
        <item>
+        <widget class="QCheckBox" name="shinyCheckbox">
+         <property name="text">
+          <string>Shiny</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QComboBox" name="languageComboBox"/>
        </item>
       </layout>
@@ -163,6 +170,11 @@
          </item>
          <item row="0" column="1">
           <widget class="QProgressBar" name="hpBar">
+           <property name="font">
+            <font>
+             <italic>true</italic>
+            </font>
+           </property>
            <property name="maximum">
             <number>255</number>
            </property>
@@ -176,6 +188,11 @@
          </item>
          <item row="5" column="1">
           <widget class="QProgressBar" name="spdBar">
+           <property name="font">
+            <font>
+             <italic>true</italic>
+            </font>
+           </property>
            <property name="maximum">
             <number>255</number>
            </property>
@@ -202,6 +219,11 @@
          </item>
          <item row="4" column="1">
           <widget class="QProgressBar" name="spdefBar">
+           <property name="font">
+            <font>
+             <italic>true</italic>
+            </font>
+           </property>
            <property name="maximum">
             <number>255</number>
            </property>
@@ -240,6 +262,13 @@
          </item>
          <item row="2" column="1">
           <widget class="QProgressBar" name="defBar">
+           <property name="font">
+            <font>
+             <weight>50</weight>
+             <italic>true</italic>
+             <bold>false</bold>
+            </font>
+           </property>
            <property name="maximum">
             <number>255</number>
            </property>
@@ -266,6 +295,13 @@
          </item>
          <item row="1" column="1">
           <widget class="QProgressBar" name="atkBar">
+           <property name="font">
+            <font>
+             <weight>50</weight>
+             <italic>true</italic>
+             <bold>false</bold>
+            </font>
+           </property>
            <property name="maximum">
             <number>255</number>
            </property>
@@ -305,6 +341,11 @@
          </item>
          <item row="3" column="1">
           <widget class="QProgressBar" name="spatkBar">
+           <property name="font">
+            <font>
+             <italic>true</italic>
+            </font>
+           </property>
            <property name="maximum">
             <number>255</number>
            </property>
@@ -368,8 +409,8 @@
            </property>
            <property name="font">
             <font>
-             <weight>75</weight>
-             <bold>true</bold>
+             <weight>50</weight>
+             <bold>false</bold>
             </font>
            </property>
            <property name="text">
@@ -429,8 +470,8 @@
            </property>
            <property name="font">
             <font>
-             <weight>75</weight>
-             <bold>true</bold>
+             <weight>50</weight>
+             <bold>false</bold>
             </font>
            </property>
            <property name="text">
@@ -490,8 +531,8 @@
            </property>
            <property name="font">
             <font>
-             <weight>75</weight>
-             <bold>true</bold>
+             <weight>50</weight>
+             <bold>false</bold>
             </font>
            </property>
            <property name="text">
@@ -556,8 +597,8 @@
            </property>
            <property name="font">
             <font>
-             <weight>75</weight>
-             <bold>true</bold>
+             <weight>50</weight>
+             <bold>false</bold>
             </font>
            </property>
            <property name="text">
@@ -649,8 +690,8 @@
               </property>
               <property name="font">
                <font>
-                <weight>75</weight>
-                <bold>true</bold>
+                <weight>50</weight>
+                <bold>false</bold>
                </font>
               </property>
               <property name="text">
