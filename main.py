@@ -2,10 +2,10 @@ import sys
 import os
 import json
 import random
+import platform
 from PyQt5 import QtWidgets, uic, QtCore
 from PyQt5.QtGui import QPixmap, QStandardItemModel, QStandardItem, QFontDatabase, QFont
 from PyQt5.QtCore import Qt
-
 from unidecode import unidecode
 
 class NonEditableModel(QStandardItemModel):
@@ -24,21 +24,22 @@ class PokemonApp(QtWidgets.QMainWindow):
         self.abilities = {}
         self.available_languages = []
         self.current_language = self.load_language_setting()
+        self.show_shiny = False
         self.load_data()
         self.load_custom_font()
         self.languageComboBox.currentIndexChanged.connect(self.handle_language_change)
         self.randomButton.clicked.connect(self.select_random_pokemon)
         self.pokemonTableView.selectionModel().currentChanged.connect(self.on_table_selection_changed)
-        self.show_shiny = False
         self.shinyCheckbox = self.findChild(QtWidgets.QCheckBox, 'shinyCheckbox')
         self.shinyCheckbox.toggled.connect(self.toggle_shiny_sprite)
-
-        self.show_shiny = False  # Initialize show_shiny attribute
-        self.setup_initial_selection()
+        self.update_ui_with_selected_pokemon(self.pokemonTableView.currentIndex())
 
     def load_custom_font(self):
         """Load and set the custom font from the font folder."""
-        font_path = os.path.join('font', 'pokemon-emerald-pro.otf')
+        if platform.system() == 'Windows':
+            font_path = os.path.join('font', 'pokemon-emerald-pro.ttf')
+        elif platform.system() == 'Linux':
+            font_path = os.path.join('font', 'pokemon-emerald-pro.otf')
         print(font_path)
         font_id = QFontDatabase.addApplicationFont(font_path)
         if font_id == -1:
@@ -168,6 +169,7 @@ class PokemonApp(QtWidgets.QMainWindow):
 
     def setup_table(self, data):
         """Setup the table view with Pokémon data."""
+
         model = NonEditableModel()
         model.setHorizontalHeaderLabels([''])
 
@@ -178,12 +180,12 @@ class PokemonApp(QtWidgets.QMainWindow):
         self.pokemonTableView.setModel(model)
         self.pokemonTableView.horizontalHeader().setSectionResizeMode(0, QtWidgets.QHeaderView.Stretch)
         self.pokemonTableView.horizontalHeader().setDefaultAlignment(Qt.AlignLeft)
-
+        
         if model.rowCount() > 0:
             first_index = model.index(0, 0)
             self.pokemonTableView.setCurrentIndex(first_index)
             self.update_ui_with_selected_pokemon(first_index)
-
+            
         self.pokemonTableView.selectionModel().currentChanged.connect(self.on_table_selection_changed)
 
     def load_language_setting(self):
@@ -205,21 +207,17 @@ class PokemonApp(QtWidgets.QMainWindow):
         """Update the UI with details of the selected Pokémon."""
         model = self.pokemonTableView.model()
         item = model.itemFromIndex(index)
-
-        if item:
-            pokemon_index = index.row() + 1
-            pokemon_name = item.text()
-            self.pokemonLabel.setText(pokemon_name)
-            pokemon_details = self.data.get(f"pokemon_{pokemon_index}", {})
-            self.update_abilities(pokemon_details.get('abilities', []))
-            self.update_types(pokemon_details.get('types', []))
-            self.update_stats(pokemon_details.get('stats', []))
-            self.load_and_display_sprite(pokemon_details.get('sprite_path', ''))
-            self.display_description(pokemon_details.get('descriptions', {}))
-            national_pokedex_number = pokemon_details.get('national_pokedex_number', 'N/A')
-            self.dexLabel.setText(f"N. {national_pokedex_number}")
-        else:
-            self.clear_pokemon_details()
+        pokemon_index = index.row() + 1
+        pokemon_name = item.text()
+        self.pokemonLabel.setText(pokemon_name)
+        pokemon_details = self.data.get(f"pokemon_{pokemon_index}", {})
+        self.update_abilities(pokemon_details.get('abilities', []))
+        self.update_types(pokemon_details.get('types', []))
+        self.update_stats(pokemon_details.get('stats', []))
+        self.load_and_display_sprite(pokemon_details.get('sprite_path', ''))
+        self.display_description(pokemon_details.get('descriptions', {}))
+        national_pokedex_number = pokemon_details.get('national_pokedex_number', 'N/A')
+        self.dexLabel.setText(f"N. {national_pokedex_number}")
 
     def display_description(self, descriptions):
         """Display Pokémon description based on current language."""
@@ -289,16 +287,6 @@ class PokemonApp(QtWidgets.QMainWindow):
             bar.setToolTip(f"{stat_name}: {base_stat}")
             bar.setVisible(True)
 
-    def clear_pokemon_details(self):
-        """Clear the display of Pokémon details."""
-        for label_name in [name for _, name in self.stat_components] + ['type1Label', 'type2Label']:
-            label = self.findChild(QtWidgets.QLabel, label_name)
-            label.setVisible(False)
-        
-        for bar_name, _ in self.stat_components:
-            bar = self.findChild(QtWidgets.QProgressBar, bar_name)
-            bar.setVisible(False)
-
     def load_and_display_types(self, image_path, label):
         """Load an image from the given path and display it on the label."""
         pixmap = QPixmap(image_path)
@@ -307,14 +295,12 @@ class PokemonApp(QtWidgets.QMainWindow):
             label.setPixmap(pixmap)
             label.setAlignment(Qt.AlignCenter)
             label.setScaledContents(False)
-            
         else:
             print(f"Failed to load image from path: {image_path}")
 
     def toggle_shiny_sprite(self, checked):
         """Toggle between showing normal and shiny sprites."""
         self.show_shiny = checked
-        # Reload the currently selected Pokémon details
         self.update_ui_with_selected_pokemon(self.pokemonTableView.currentIndex())
 
     def on_table_selection_changed(self, current, previous):
@@ -335,15 +321,7 @@ class PokemonApp(QtWidgets.QMainWindow):
         self.pokemonTableView.setCurrentIndex(random_index)
         self.pokemonTableView.scrollTo(random_index)
         self.update_ui_with_selected_pokemon(random_index)
-
-    def setup_initial_selection(self):
-        """Setup initial selection to the first Pokémon in the table."""
-        model = self.pokemonTableView.model()
-        if model.rowCount() > 0:
-            first_index = model.index(0, 0)
-            self.pokemonTableView.setCurrentIndex(first_index)
-            self.update_ui_with_selected_pokemon(first_index)
-
+        
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     window = PokemonApp()
