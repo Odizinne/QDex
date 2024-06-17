@@ -38,12 +38,25 @@ def fetch_pokemon_details(pokemon_index):
             pokemon_details['descriptions'] = fetch_pokemon_descriptions(species_data)
             pokemon_details['national_pokedex_number'] = species_data['id']
 
+            # Fetch and calculate gender rate
+            gender_rate = species_data.get('gender_rate', -1)
+            if gender_rate == -1:
+                pokemon_details['gender_rate'] = None  # No gender rate available
+            else:
+                female_rate = (gender_rate / 8) * 100  # Convert to percentage
+                male_rate = 100 - female_rate
+                pokemon_details['gender_rate'] = {
+                    'female': round(female_rate),
+                    'male': round(male_rate)
+                }
+
             return pokemon_details
         else:
             print(f"Failed to retrieve species data for Pokemon index {pokemon_index}: {species_response.status_code}")
     else:
         print(f"Failed to retrieve data for Pokemon index {pokemon_index}: {response.status_code}")
     return None
+
 
 def fetch_pokemon_descriptions(species_data):
     """Fetch Pokémon descriptions in all available languages."""
@@ -131,5 +144,5 @@ if __name__ == "__main__":
     if not os.path.exists(SPRITES_DIR):
         os.makedirs(SPRITES_DIR)
         
-    fetch_and_save_all_pokemon_details(limit=0)
-    fetch_and_save_abilities(limit=0)
+    fetch_and_save_all_pokemon_details(limit=151)
+    #fetch_and_save_abilities(limit=10)

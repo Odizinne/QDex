@@ -4,8 +4,9 @@ import json
 import random
 import platform
 from PyQt5 import QtWidgets, uic, QtCore
-from PyQt5.QtGui import QPixmap, QStandardItemModel, QStandardItem, QFontDatabase, QFont
+from PyQt5.QtGui import QPixmap, QStandardItemModel, QStandardItem, QFontDatabase, QFont, QColor, QPalette
 from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QStyleFactory
 from unidecode import unidecode
 
 class NonEditableModel(QStandardItemModel):
@@ -19,7 +20,6 @@ class PokemonApp(QtWidgets.QMainWindow):
 
         self.setWindowTitle("QDex")
         self.init_ui_components()
-        self.configure_progress_bars()
         self.data = {}
         self.abilities = {}
         self.available_languages = []
@@ -84,9 +84,9 @@ class PokemonApp(QtWidgets.QMainWindow):
         self.randomButton = self.findChild(QtWidgets.QPushButton, 'randomButton')
         self.descLabel = self.findChild(QtWidgets.QLabel, 'descLabel')
         self.descLabel.setWordWrap(True)
+        self.maleLabel = self.findChild(QtWidgets.QLabel, 'maleLabel')
+        self.femaleLabel = self.findChild(QtWidgets.QLabel, 'femaleLabel')
 
-    def configure_progress_bars(self):
-        """Configure the stat progress bars."""
         for bar_name, _ in self.stat_components:
             bar = self.findChild(QtWidgets.QProgressBar, bar_name)
             bar.setMinimum(0)
@@ -94,6 +94,21 @@ class PokemonApp(QtWidgets.QMainWindow):
             bar.setValue(0)
             bar.setTextVisible(True)
             bar.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
+
+        genderBar = self.findChild(QtWidgets.QProgressBar, 'genderBar')
+        genderBar.setMinimum(0)
+        genderBar.setMaximum(100)
+        genderBar.setValue(0)
+        genderBar.setTextVisible(True)
+        genderBar.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
+        male_color = QColor("#add8e6")
+        female_color = QColor("#ffc0cb")
+        male_palette = self.maleLabel.palette()
+        female_palette = self.femaleLabel.palette()
+        male_palette.setColor(QPalette.WindowText, male_color)
+        female_palette.setColor(QPalette.WindowText, female_color)
+        self.maleLabel.setPalette(male_palette)
+        self.femaleLabel.setPalette(female_palette)
 
     def wrap_text(self, text, max_chars_per_line):
         """Wrap the text to a specific number of characters per line."""
@@ -219,10 +234,23 @@ class PokemonApp(QtWidgets.QMainWindow):
         national_pokedex_number = pokemon_details.get('national_pokedex_number', 'N/A')
         self.dexLabel.setText(f"N. {national_pokedex_number}")
 
+        gender_rate = pokemon_details.get('gender_rate', None)
+        if gender_rate:
+            female_rate = gender_rate['female']
+            male_rate = 100 - female_rate
+            self.genderBar.setValue(int(male_rate))
+            self.genderBar.setTextVisible(False)
+            self.maleLabel.setText(f"♂ {male_rate:.1f}%")
+            self.femaleLabel.setText(f"♀ {female_rate:.1f}%")
+        else:
+            self.genderBar.setValue(0)
+            self.maleLabel.setText("Genderless")
+            self.femaleLabel.setText("")
+
     def display_description(self, descriptions):
         """Display Pokémon description based on current language."""
         description = descriptions.get(self.current_language, 'Description not available')
-        wrapped_description = self.wrap_text(description, max_chars_per_line=50)  # Adjust as needed
+        wrapped_description = self.wrap_text(description, max_chars_per_line=40)
         self.descLabel.setText(wrapped_description)
 
     def load_and_display_sprite(self, sprite_path):
@@ -321,6 +349,7 @@ class PokemonApp(QtWidgets.QMainWindow):
         self.pokemonTableView.setCurrentIndex(random_index)
         self.pokemonTableView.scrollTo(random_index)
         self.update_ui_with_selected_pokemon(random_index)
+
         
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
