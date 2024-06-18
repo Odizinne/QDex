@@ -46,8 +46,8 @@ def fetch_pokemon_details(pokemon_index):
                 female_rate = (gender_rate / 8) * 100  # Convert to percentage
                 male_rate = 100 - female_rate
                 pokemon_details['gender_rate'] = {
-                    'female': round(female_rate),
-                    'male': round(male_rate)
+                    'female': (female_rate),
+                    'male': (male_rate)
                 }
 
             return pokemon_details
