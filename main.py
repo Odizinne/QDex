@@ -3,19 +3,20 @@ import os
 import json
 import random
 import platform
-from PyQt5 import QtWidgets, uic, QtCore
-from PyQt5.QtGui import QPixmap, QStandardItemModel, QStandardItem, QFontDatabase, QFont, QColor, QPalette
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QStyleFactory
+from PyQt6 import QtWidgets, uic
+from PyQt6.QtCore import Qt
+from PyQt6.QtGui import QPixmap, QFontDatabase, QFont, QColor, QPalette, QStandardItemModel, QStandardItem
 from unidecode import unidecode
+
 
 class NonEditableModel(QStandardItemModel):
     def flags(self, index):
-        return Qt.ItemIsSelectable | Qt.ItemIsEnabled
+        return Qt.ItemFlag.ItemIsSelectable | Qt.ItemFlag.ItemIsEnabled
+
 
 class PokemonApp(QtWidgets.QMainWindow):
     def __init__(self):
-        super(PokemonApp, self).__init__()
+        super().__init__()
         uic.loadUi('design.ui', self)
 
         self.setWindowTitle("QDex")
@@ -93,20 +94,20 @@ class PokemonApp(QtWidgets.QMainWindow):
             bar.setMaximum(255)
             bar.setValue(0)
             bar.setTextVisible(True)
-            bar.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
+            bar.setAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter)
 
         genderBar = self.findChild(QtWidgets.QProgressBar, 'genderBar')
         genderBar.setMinimum(0)
         genderBar.setMaximum(100)
         genderBar.setValue(0)
         genderBar.setTextVisible(True)
-        genderBar.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
+        genderBar.setAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter)
         male_color = QColor("#add8e6")
         female_color = QColor("#ffc0cb")
         male_palette = self.maleLabel.palette()
         female_palette = self.femaleLabel.palette()
-        male_palette.setColor(QPalette.WindowText, male_color)
-        female_palette.setColor(QPalette.WindowText, female_color)
+        male_palette.setColor(QPalette.ColorRole.WindowText, male_color)
+        female_palette.setColor(QPalette.ColorRole.WindowText, female_color)
         self.maleLabel.setPalette(male_palette)
         self.femaleLabel.setPalette(female_palette)
 
@@ -193,8 +194,8 @@ class PokemonApp(QtWidgets.QMainWindow):
             model.appendRow([QStandardItem(name)])
 
         self.pokemonTableView.setModel(model)
-        self.pokemonTableView.horizontalHeader().setSectionResizeMode(0, QtWidgets.QHeaderView.Stretch)
-        self.pokemonTableView.horizontalHeader().setDefaultAlignment(Qt.AlignLeft)
+        self.pokemonTableView.horizontalHeader().setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeMode.Stretch)
+        self.pokemonTableView.horizontalHeader().setDefaultAlignment(Qt.AlignmentFlag.AlignLeft)
         
         if model.rowCount() > 0:
             first_index = model.index(0, 0)
@@ -321,7 +322,7 @@ class PokemonApp(QtWidgets.QMainWindow):
         if not pixmap.isNull():
             pixmap = pixmap.scaled(64, 64)
             label.setPixmap(pixmap)
-            label.setAlignment(Qt.AlignCenter)
+            label.setAlignment(Qt.AlignmentFlag.AlignCenter)
             label.setScaledContents(False)
         else:
             print(f"Failed to load image from path: {image_path}")
@@ -355,4 +356,4 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     window = PokemonApp()
     window.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
