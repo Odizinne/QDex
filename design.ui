@@ -180,9 +180,15 @@
         <property name="frameShadow">
          <enum>QFrame::Shadow::Raised</enum>
         </property>
-        <layout class="QGridLayout" name="statsLayout">
+        <layout class="QGridLayout" name="statsLayout" columnstretch="0,10,0">
          <item row="0" column="1">
           <widget class="QProgressBar" name="hpBar">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="font">
             <font>
              <italic>true</italic>
@@ -204,6 +210,12 @@
          </item>
          <item row="2" column="1">
           <widget class="QProgressBar" name="defBar">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="font">
             <font>
              <italic>true</italic>
@@ -226,6 +238,12 @@
          </item>
          <item row="5" column="1">
           <widget class="QProgressBar" name="spdBar">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="font">
             <font>
              <italic>true</italic>
@@ -250,6 +268,12 @@
          </item>
          <item row="4" column="1">
           <widget class="QProgressBar" name="spdefBar">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="font">
             <font>
              <italic>true</italic>
@@ -271,6 +295,12 @@
          </item>
          <item row="3" column="1">
           <widget class="QProgressBar" name="spatkBar">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="font">
             <font>
              <italic>true</italic>
@@ -292,6 +322,12 @@
          </item>
          <item row="1" column="1">
           <widget class="QProgressBar" name="atkBar">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="font">
             <font>
              <italic>true</italic>
