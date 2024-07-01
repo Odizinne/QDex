@@ -93,7 +93,6 @@ class PokemonApp(QtWidgets.QMainWindow):
             bar.setMinimum(0)
             bar.setMaximum(255)
             bar.setValue(0)
-            bar.setTextVisible(True)
             bar.setAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter)
 
         genderBar = self.findChild(QtWidgets.QProgressBar, 'genderBar')

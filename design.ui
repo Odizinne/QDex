@@ -181,18 +181,6 @@
          <enum>QFrame::Shadow::Raised</enum>
         </property>
         <layout class="QGridLayout" name="statsLayout">
-         <item row="1" column="0">
-          <widget class="QLabel" name="atkLabel">
-           <property name="font">
-            <font>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="text">
-            <string>atk</string>
-           </property>
-          </widget>
-         </item>
          <item row="0" column="1">
           <widget class="QProgressBar" name="hpBar">
            <property name="font">
@@ -206,8 +194,33 @@
            <property name="value">
             <number>0</number>
            </property>
+           <property name="textVisible">
+            <bool>false</bool>
+           </property>
            <property name="format">
             <string>HP</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QProgressBar" name="defBar">
+           <property name="font">
+            <font>
+             <italic>true</italic>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="maximum">
+            <number>255</number>
+           </property>
+           <property name="value">
+            <number>0</number>
+           </property>
+           <property name="textVisible">
+            <bool>false</bool>
+           </property>
+           <property name="format">
+            <string>Defense</string>
            </property>
           </widget>
          </item>
@@ -224,20 +237,14 @@
            <property name="value">
             <number>0</number>
            </property>
+           <property name="textVisible">
+            <bool>false</bool>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
            <property name="format">
             <string>Speed</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="0">
-          <widget class="QLabel" name="spdLabel">
-           <property name="font">
-            <font>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="text">
-            <string>spd</string>
            </property>
           </widget>
          </item>
@@ -254,12 +261,58 @@
            <property name="value">
             <number>0</number>
            </property>
+           <property name="textVisible">
+            <bool>false</bool>
+           </property>
            <property name="format">
             <string>Sp. Defense</string>
            </property>
           </widget>
          </item>
-         <item row="0" column="0">
+         <item row="3" column="1">
+          <widget class="QProgressBar" name="spatkBar">
+           <property name="font">
+            <font>
+             <italic>true</italic>
+            </font>
+           </property>
+           <property name="maximum">
+            <number>255</number>
+           </property>
+           <property name="value">
+            <number>0</number>
+           </property>
+           <property name="textVisible">
+            <bool>false</bool>
+           </property>
+           <property name="format">
+            <string>Sp. Attack</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QProgressBar" name="atkBar">
+           <property name="font">
+            <font>
+             <italic>true</italic>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="maximum">
+            <number>255</number>
+           </property>
+           <property name="value">
+            <number>0</number>
+           </property>
+           <property name="textVisible">
+            <bool>false</bool>
+           </property>
+           <property name="format">
+            <string>Attack</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
           <widget class="QLabel" name="hpLabel">
            <property name="minimumSize">
             <size>
@@ -281,28 +334,27 @@
            <property name="text">
             <string>hp</string>
            </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+           </property>
           </widget>
          </item>
-         <item row="2" column="1">
-          <widget class="QProgressBar" name="defBar">
+         <item row="1" column="2">
+          <widget class="QLabel" name="atkLabel">
            <property name="font">
             <font>
-             <italic>true</italic>
-             <bold>false</bold>
+             <bold>true</bold>
             </font>
            </property>
-           <property name="maximum">
-            <number>255</number>
+           <property name="text">
+            <string>atk</string>
            </property>
-           <property name="value">
-            <number>0</number>
-           </property>
-           <property name="format">
-            <string>Defense</string>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
            </property>
           </widget>
          </item>
-         <item row="2" column="0">
+         <item row="2" column="2">
           <widget class="QLabel" name="defLabel">
            <property name="font">
             <font>
@@ -312,40 +364,12 @@
            <property name="text">
             <string>def</string>
            </property>
-          </widget>
-         </item>
-         <item row="1" column="1">
-          <widget class="QProgressBar" name="atkBar">
-           <property name="font">
-            <font>
-             <italic>true</italic>
-             <bold>false</bold>
-            </font>
-           </property>
-           <property name="maximum">
-            <number>255</number>
-           </property>
-           <property name="value">
-            <number>0</number>
-           </property>
-           <property name="format">
-            <string>Attack</string>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
            </property>
           </widget>
          </item>
-         <item row="4" column="0">
-          <widget class="QLabel" name="spdefLabel">
-           <property name="font">
-            <font>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="text">
-            <string>spdef</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="0">
+         <item row="3" column="2">
           <widget class="QLabel" name="spatkLabel">
            <property name="font">
             <font>
@@ -355,25 +379,86 @@
            <property name="text">
             <string>spatk</string>
            </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+           </property>
           </widget>
          </item>
-         <item row="3" column="1">
-          <widget class="QProgressBar" name="spatkBar">
+         <item row="4" column="2">
+          <widget class="QLabel" name="spdefLabel">
            <property name="font">
             <font>
-             <italic>true</italic>
+             <bold>true</bold>
             </font>
            </property>
-           <property name="maximum">
-            <number>255</number>
+           <property name="text">
+            <string>spdef</string>
            </property>
-           <property name="value">
-            <number>0</number>
-           </property>
-           <property name="format">
-            <string>Sp. Attack</string>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
            </property>
           </widget>
+         </item>
+         <item row="5" column="2">
+          <widget class="QLabel" name="spdLabel">
+           <property name="font">
+            <font>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>spd</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0" rowspan="6">
+          <layout class="QGridLayout" name="gridLayout">
+           <item row="4" column="0">
+            <widget class="QLabel" name="label_5">
+             <property name="text">
+              <string>Sp. Defense</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>Speed</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_3">
+             <property name="text">
+              <string>Attack</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>HP</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_4">
+             <property name="text">
+              <string>Defense</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_6">
+             <property name="text">
+              <string>Sp. Attack</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
         </layout>
        </widget>
