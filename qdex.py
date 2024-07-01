@@ -5,7 +5,7 @@ import random
 import platform
 from PyQt6 import QtWidgets, uic
 from PyQt6.QtCore import Qt
-from PyQt6.QtGui import QPixmap, QFontDatabase, QFont, QColor, QPalette, QStandardItemModel, QStandardItem
+from PyQt6.QtGui import QPixmap, QFontDatabase, QFont, QColor, QPalette, QStandardItemModel, QStandardItem, QIcon
 from unidecode import unidecode
 
 
@@ -20,6 +20,8 @@ class PokemonApp(QtWidgets.QMainWindow):
         uic.loadUi('design.ui', self)
 
         self.setWindowTitle("QDex")
+        icon_path = "icons/icon.png"
+        self.setWindowIcon(QIcon(icon_path))
         self.init_ui_components()
         self.data = {}
         self.abilities = {}

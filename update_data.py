@@ -2,7 +2,6 @@ import json
 import os
 import requests
 
-# Define base directory for sprites
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 SPRITES_DIR = os.path.join(BASE_DIR, 'sprites')
 
@@ -19,13 +18,11 @@ def fetch_pokemon_details(pokemon_index):
         if species_response.status_code == 200:
             species_data = species_response.json()
 
-            # Fetch normal sprite
             sprite_url = data['sprites']['front_default']
             sprite_filename = f"pokemon_{pokemon_index}.png"
             sprite_path = os.path.join(SPRITES_DIR, sprite_filename)
             download_and_save_sprite(sprite_url, sprite_path)
 
-            # Fetch shiny sprite if available
             shiny_sprite_path = None
             if 'front_shiny' in data['sprites'] and data['sprites']['front_shiny']:
                 shiny_sprite_url = data['sprites']['front_shiny']
@@ -38,12 +35,11 @@ def fetch_pokemon_details(pokemon_index):
             pokemon_details['descriptions'] = fetch_pokemon_descriptions(species_data)
             pokemon_details['national_pokedex_number'] = species_data['id']
 
-            # Fetch and calculate gender rate
             gender_rate = species_data.get('gender_rate', -1)
             if gender_rate == -1:
-                pokemon_details['gender_rate'] = None  # No gender rate available
+                pokemon_details['gender_rate'] = None
             else:
-                female_rate = (gender_rate / 8) * 100  # Convert to percentage
+                female_rate = (gender_rate / 8) * 100 
                 male_rate = 100 - female_rate
                 pokemon_details['gender_rate'] = {
                     'female': (female_rate),
@@ -144,5 +140,5 @@ if __name__ == "__main__":
     if not os.path.exists(SPRITES_DIR):
         os.makedirs(SPRITES_DIR)
         
-    fetch_and_save_all_pokemon_details(limit=151)
+    fetch_and_save_all_pokemon_details(limit=0)
     #fetch_and_save_abilities(limit=10)

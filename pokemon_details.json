@@ -57,8 +57,8 @@
         "sprite_path": "./sprites/pokemon_1.png",
         "national_pokedex_number": 1,
         "gender_rate": {
-            "female": 12,
-            "male": 88
+            "female": 12.5,
+            "male": 87.5
         }
     },
     "pokemon_2": {
@@ -119,8 +119,8 @@
         "sprite_path": "./sprites/pokemon_2.png",
         "national_pokedex_number": 2,
         "gender_rate": {
-            "female": 12,
-            "male": 88
+            "female": 12.5,
+            "male": 87.5
         }
     },
     "pokemon_3": {
@@ -181,8 +181,8 @@
         "sprite_path": "./sprites/pokemon_3.png",
         "national_pokedex_number": 3,
         "gender_rate": {
-            "female": 12,
-            "male": 88
+            "female": 12.5,
+            "male": 87.5
         }
     },
     "pokemon_4": {
@@ -242,8 +242,8 @@
         "sprite_path": "./sprites/pokemon_4.png",
         "national_pokedex_number": 4,
         "gender_rate": {
-            "female": 12,
-            "male": 88
+            "female": 12.5,
+            "male": 87.5
         }
     },
     "pokemon_5": {
@@ -303,8 +303,8 @@
         "sprite_path": "./sprites/pokemon_5.png",
         "national_pokedex_number": 5,
         "gender_rate": {
-            "female": 12,
-            "male": 88
+            "female": 12.5,
+            "male": 87.5
         }
     },
     "pokemon_6": {
@@ -365,8 +365,8 @@
         "sprite_path": "./sprites/pokemon_6.png",
         "national_pokedex_number": 6,
         "gender_rate": {
-            "female": 12,
-            "male": 88
+            "female": 12.5,
+            "male": 87.5
         }
     },
     "pokemon_7": {
@@ -426,8 +426,8 @@
         "sprite_path": "./sprites/pokemon_7.png",
         "national_pokedex_number": 7,
         "gender_rate": {
-            "female": 12,
-            "male": 88
+            "female": 12.5,
+            "male": 87.5
         }
     },
     "pokemon_8": {
@@ -487,8 +487,8 @@
         "sprite_path": "./sprites/pokemon_8.png",
         "national_pokedex_number": 8,
         "gender_rate": {
-            "female": 12,
-            "male": 88
+            "female": 12.5,
+            "male": 87.5
         }
     },
     "pokemon_9": {
@@ -548,8 +548,8 @@
         "sprite_path": "./sprites/pokemon_9.png",
         "national_pokedex_number": 9,
         "gender_rate": {
-            "female": 12,
-            "male": 88
+            "female": 12.5,
+            "male": 87.5
         }
     },
     "pokemon_10": {
@@ -609,8 +609,8 @@
         "sprite_path": "./sprites/pokemon_10.png",
         "national_pokedex_number": 10,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_11": {
@@ -669,8 +669,8 @@
         "sprite_path": "./sprites/pokemon_11.png",
         "national_pokedex_number": 11,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_12": {
@@ -731,8 +731,8 @@
         "sprite_path": "./sprites/pokemon_12.png",
         "national_pokedex_number": 12,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_13": {
@@ -793,8 +793,8 @@
         "sprite_path": "./sprites/pokemon_13.png",
         "national_pokedex_number": 13,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_14": {
@@ -854,8 +854,8 @@
         "sprite_path": "./sprites/pokemon_14.png",
         "national_pokedex_number": 14,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_15": {
@@ -916,8 +916,8 @@
         "sprite_path": "./sprites/pokemon_15.png",
         "national_pokedex_number": 15,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_16": {
@@ -979,8 +979,8 @@
         "sprite_path": "./sprites/pokemon_16.png",
         "national_pokedex_number": 16,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_17": {
@@ -1042,8 +1042,8 @@
         "sprite_path": "./sprites/pokemon_17.png",
         "national_pokedex_number": 17,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_18": {
@@ -1105,8 +1105,8 @@
         "sprite_path": "./sprites/pokemon_18.png",
         "national_pokedex_number": 18,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_19": {
@@ -1167,8 +1167,8 @@
         "sprite_path": "./sprites/pokemon_19.png",
         "national_pokedex_number": 19,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_20": {
@@ -1229,8 +1229,8 @@
         "sprite_path": "./sprites/pokemon_20.png",
         "national_pokedex_number": 20,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_21": {
@@ -1291,8 +1291,8 @@
         "sprite_path": "./sprites/pokemon_21.png",
         "national_pokedex_number": 21,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_22": {
@@ -1353,8 +1353,8 @@
         "sprite_path": "./sprites/pokemon_22.png",
         "national_pokedex_number": 22,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_23": {
@@ -1415,8 +1415,8 @@
         "sprite_path": "./sprites/pokemon_23.png",
         "national_pokedex_number": 23,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_24": {
@@ -1477,8 +1477,8 @@
         "sprite_path": "./sprites/pokemon_24.png",
         "national_pokedex_number": 24,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_25": {
@@ -1538,8 +1538,8 @@
         "sprite_path": "./sprites/pokemon_25.png",
         "national_pokedex_number": 25,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_26": {
@@ -1599,8 +1599,8 @@
         "sprite_path": "./sprites/pokemon_26.png",
         "national_pokedex_number": 26,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_27": {
@@ -1660,8 +1660,8 @@
         "sprite_path": "./sprites/pokemon_27.png",
         "national_pokedex_number": 27,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_28": {
@@ -1721,8 +1721,8 @@
         "sprite_path": "./sprites/pokemon_28.png",
         "national_pokedex_number": 28,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_29": {
@@ -1783,8 +1783,8 @@
         "sprite_path": "./sprites/pokemon_29.png",
         "national_pokedex_number": 29,
         "gender_rate": {
-            "female": 100,
-            "male": 0
+            "female": 100.0,
+            "male": 0.0
         }
     },
     "pokemon_30": {
@@ -1845,8 +1845,8 @@
         "sprite_path": "./sprites/pokemon_30.png",
         "national_pokedex_number": 30,
         "gender_rate": {
-            "female": 100,
-            "male": 0
+            "female": 100.0,
+            "male": 0.0
         }
     },
     "pokemon_31": {
@@ -1908,8 +1908,8 @@
         "sprite_path": "./sprites/pokemon_31.png",
         "national_pokedex_number": 31,
         "gender_rate": {
-            "female": 100,
-            "male": 0
+            "female": 100.0,
+            "male": 0.0
         }
     },
     "pokemon_32": {
@@ -1970,8 +1970,8 @@
         "sprite_path": "./sprites/pokemon_32.png",
         "national_pokedex_number": 32,
         "gender_rate": {
-            "female": 0,
-            "male": 100
+            "female": 0.0,
+            "male": 100.0
         }
     },
     "pokemon_33": {
@@ -2032,8 +2032,8 @@
         "sprite_path": "./sprites/pokemon_33.png",
         "national_pokedex_number": 33,
         "gender_rate": {
-            "female": 0,
-            "male": 100
+            "female": 0.0,
+            "male": 100.0
         }
     },
     "pokemon_34": {
@@ -2095,8 +2095,8 @@
         "sprite_path": "./sprites/pokemon_34.png",
         "national_pokedex_number": 34,
         "gender_rate": {
-            "female": 0,
-            "male": 100
+            "female": 0.0,
+            "male": 100.0
         }
     },
     "pokemon_35": {
@@ -2157,8 +2157,8 @@
         "sprite_path": "./sprites/pokemon_35.png",
         "national_pokedex_number": 35,
         "gender_rate": {
-            "female": 75,
-            "male": 25
+            "female": 75.0,
+            "male": 25.0
         }
     },
     "pokemon_36": {
@@ -2219,8 +2219,8 @@
         "sprite_path": "./sprites/pokemon_36.png",
         "national_pokedex_number": 36,
         "gender_rate": {
-            "female": 75,
-            "male": 25
+            "female": 75.0,
+            "male": 25.0
         }
     },
     "pokemon_37": {
@@ -2280,8 +2280,8 @@
         "sprite_path": "./sprites/pokemon_37.png",
         "national_pokedex_number": 37,
         "gender_rate": {
-            "female": 75,
-            "male": 25
+            "female": 75.0,
+            "male": 25.0
         }
     },
     "pokemon_38": {
@@ -2341,8 +2341,8 @@
         "sprite_path": "./sprites/pokemon_38.png",
         "national_pokedex_number": 38,
         "gender_rate": {
-            "female": 75,
-            "male": 25
+            "female": 75.0,
+            "male": 25.0
         }
     },
     "pokemon_39": {
@@ -2404,8 +2404,8 @@
         "sprite_path": "./sprites/pokemon_39.png",
         "national_pokedex_number": 39,
         "gender_rate": {
-            "female": 75,
-            "male": 25
+            "female": 75.0,
+            "male": 25.0
         }
     },
     "pokemon_40": {
@@ -2467,8 +2467,8 @@
         "sprite_path": "./sprites/pokemon_40.png",
         "national_pokedex_number": 40,
         "gender_rate": {
-            "female": 75,
-            "male": 25
+            "female": 75.0,
+            "male": 25.0
         }
     },
     "pokemon_41": {
@@ -2529,8 +2529,8 @@
         "sprite_path": "./sprites/pokemon_41.png",
         "national_pokedex_number": 41,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_42": {
@@ -2591,8 +2591,8 @@
         "sprite_path": "./sprites/pokemon_42.png",
         "national_pokedex_number": 42,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_43": {
@@ -2653,8 +2653,8 @@
         "sprite_path": "./sprites/pokemon_43.png",
         "national_pokedex_number": 43,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_44": {
@@ -2715,8 +2715,8 @@
         "sprite_path": "./sprites/pokemon_44.png",
         "national_pokedex_number": 44,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_45": {
@@ -2777,8 +2777,8 @@
         "sprite_path": "./sprites/pokemon_45.png",
         "national_pokedex_number": 45,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_46": {
@@ -2840,8 +2840,8 @@
         "sprite_path": "./sprites/pokemon_46.png",
         "national_pokedex_number": 46,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_47": {
@@ -2903,8 +2903,8 @@
         "sprite_path": "./sprites/pokemon_47.png",
         "national_pokedex_number": 47,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_48": {
@@ -2966,8 +2966,8 @@
         "sprite_path": "./sprites/pokemon_48.png",
         "national_pokedex_number": 48,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_49": {
@@ -3029,8 +3029,8 @@
         "sprite_path": "./sprites/pokemon_49.png",
         "national_pokedex_number": 49,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_50": {
@@ -3091,8 +3091,8 @@
         "sprite_path": "./sprites/pokemon_50.png",
         "national_pokedex_number": 50,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_51": {
@@ -3153,8 +3153,8 @@
         "sprite_path": "./sprites/pokemon_51.png",
         "national_pokedex_number": 51,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_52": {
@@ -3215,8 +3215,8 @@
         "sprite_path": "./sprites/pokemon_52.png",
         "national_pokedex_number": 52,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_53": {
@@ -3277,8 +3277,8 @@
         "sprite_path": "./sprites/pokemon_53.png",
         "national_pokedex_number": 53,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_54": {
@@ -3339,8 +3339,8 @@
         "sprite_path": "./sprites/pokemon_54.png",
         "national_pokedex_number": 54,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_55": {
@@ -3401,8 +3401,8 @@
         "sprite_path": "./sprites/pokemon_55.png",
         "national_pokedex_number": 55,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_56": {
@@ -3463,8 +3463,8 @@
         "sprite_path": "./sprites/pokemon_56.png",
         "national_pokedex_number": 56,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_57": {
@@ -3525,8 +3525,8 @@
         "sprite_path": "./sprites/pokemon_57.png",
         "national_pokedex_number": 57,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_58": {
@@ -3587,8 +3587,8 @@
         "sprite_path": "./sprites/pokemon_58.png",
         "national_pokedex_number": 58,
         "gender_rate": {
-            "female": 25,
-            "male": 75
+            "female": 25.0,
+            "male": 75.0
         }
     },
     "pokemon_59": {
@@ -3649,8 +3649,8 @@
         "sprite_path": "./sprites/pokemon_59.png",
         "national_pokedex_number": 59,
         "gender_rate": {
-            "female": 25,
-            "male": 75
+            "female": 25.0,
+            "male": 75.0
         }
     },
     "pokemon_60": {
@@ -3711,8 +3711,8 @@
         "sprite_path": "./sprites/pokemon_60.png",
         "national_pokedex_number": 60,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_61": {
@@ -3773,8 +3773,8 @@
         "sprite_path": "./sprites/pokemon_61.png",
         "national_pokedex_number": 61,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_62": {
@@ -3836,8 +3836,8 @@
         "sprite_path": "./sprites/pokemon_62.png",
         "national_pokedex_number": 62,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_63": {
@@ -3898,8 +3898,8 @@
         "sprite_path": "./sprites/pokemon_63.png",
         "national_pokedex_number": 63,
         "gender_rate": {
-            "female": 25,
-            "male": 75
+            "female": 25.0,
+            "male": 75.0
         }
     },
     "pokemon_64": {
@@ -3960,8 +3960,8 @@
         "sprite_path": "./sprites/pokemon_64.png",
         "national_pokedex_number": 64,
         "gender_rate": {
-            "female": 25,
-            "male": 75
+            "female": 25.0,
+            "male": 75.0
         }
     },
     "pokemon_65": {
@@ -4022,8 +4022,8 @@
         "sprite_path": "./sprites/pokemon_65.png",
         "national_pokedex_number": 65,
         "gender_rate": {
-            "female": 25,
-            "male": 75
+            "female": 25.0,
+            "male": 75.0
         }
     },
     "pokemon_66": {
@@ -4084,8 +4084,8 @@
         "sprite_path": "./sprites/pokemon_66.png",
         "national_pokedex_number": 66,
         "gender_rate": {
-            "female": 25,
-            "male": 75
+            "female": 25.0,
+            "male": 75.0
         }
     },
     "pokemon_67": {
@@ -4146,8 +4146,8 @@
         "sprite_path": "./sprites/pokemon_67.png",
         "national_pokedex_number": 67,
         "gender_rate": {
-            "female": 25,
-            "male": 75
+            "female": 25.0,
+            "male": 75.0
         }
     },
     "pokemon_68": {
@@ -4208,8 +4208,8 @@
         "sprite_path": "./sprites/pokemon_68.png",
         "national_pokedex_number": 68,
         "gender_rate": {
-            "female": 25,
-            "male": 75
+            "female": 25.0,
+            "male": 75.0
         }
     },
     "pokemon_69": {
@@ -4270,8 +4270,8 @@
         "sprite_path": "./sprites/pokemon_69.png",
         "national_pokedex_number": 69,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_70": {
@@ -4332,8 +4332,8 @@
         "sprite_path": "./sprites/pokemon_70.png",
         "national_pokedex_number": 70,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_71": {
@@ -4394,8 +4394,8 @@
         "sprite_path": "./sprites/pokemon_71.png",
         "national_pokedex_number": 71,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_72": {
@@ -4457,8 +4457,8 @@
         "sprite_path": "./sprites/pokemon_72.png",
         "national_pokedex_number": 72,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_73": {
@@ -4520,8 +4520,8 @@
         "sprite_path": "./sprites/pokemon_73.png",
         "national_pokedex_number": 73,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_74": {
@@ -4583,8 +4583,8 @@
         "sprite_path": "./sprites/pokemon_74.png",
         "national_pokedex_number": 74,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_75": {
@@ -4646,8 +4646,8 @@
         "sprite_path": "./sprites/pokemon_75.png",
         "national_pokedex_number": 75,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_76": {
@@ -4709,8 +4709,8 @@
         "sprite_path": "./sprites/pokemon_76.png",
         "national_pokedex_number": 76,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_77": {
@@ -4771,8 +4771,8 @@
         "sprite_path": "./sprites/pokemon_77.png",
         "national_pokedex_number": 77,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_78": {
@@ -4833,8 +4833,8 @@
         "sprite_path": "./sprites/pokemon_78.png",
         "national_pokedex_number": 78,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_79": {
@@ -4896,8 +4896,8 @@
         "sprite_path": "./sprites/pokemon_79.png",
         "national_pokedex_number": 79,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_80": {
@@ -4959,8 +4959,8 @@
         "sprite_path": "./sprites/pokemon_80.png",
         "national_pokedex_number": 80,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_81": {
@@ -5142,8 +5142,8 @@
         "sprite_path": "./sprites/pokemon_83.png",
         "national_pokedex_number": 83,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_84": {
@@ -5205,8 +5205,8 @@
         "sprite_path": "./sprites/pokemon_84.png",
         "national_pokedex_number": 84,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_85": {
@@ -5268,8 +5268,8 @@
         "sprite_path": "./sprites/pokemon_85.png",
         "national_pokedex_number": 85,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_86": {
@@ -5330,8 +5330,8 @@
         "sprite_path": "./sprites/pokemon_86.png",
         "national_pokedex_number": 86,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_87": {
@@ -5393,8 +5393,8 @@
         "sprite_path": "./sprites/pokemon_87.png",
         "national_pokedex_number": 87,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_88": {
@@ -5455,8 +5455,8 @@
         "sprite_path": "./sprites/pokemon_88.png",
         "national_pokedex_number": 88,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_89": {
@@ -5517,8 +5517,8 @@
         "sprite_path": "./sprites/pokemon_89.png",
         "national_pokedex_number": 89,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_90": {
@@ -5579,8 +5579,8 @@
         "sprite_path": "./sprites/pokemon_90.png",
         "national_pokedex_number": 90,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_91": {
@@ -5642,8 +5642,8 @@
         "sprite_path": "./sprites/pokemon_91.png",
         "national_pokedex_number": 91,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_92": {
@@ -5703,8 +5703,8 @@
         "sprite_path": "./sprites/pokemon_92.png",
         "national_pokedex_number": 92,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_93": {
@@ -5764,8 +5764,8 @@
         "sprite_path": "./sprites/pokemon_93.png",
         "national_pokedex_number": 93,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_94": {
@@ -5825,8 +5825,8 @@
         "sprite_path": "./sprites/pokemon_94.png",
         "national_pokedex_number": 94,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_95": {
@@ -5888,8 +5888,8 @@
         "sprite_path": "./sprites/pokemon_95.png",
         "national_pokedex_number": 95,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_96": {
@@ -5950,8 +5950,8 @@
         "sprite_path": "./sprites/pokemon_96.png",
         "national_pokedex_number": 96,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_97": {
@@ -6012,8 +6012,8 @@
         "sprite_path": "./sprites/pokemon_97.png",
         "national_pokedex_number": 97,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_98": {
@@ -6074,8 +6074,8 @@
         "sprite_path": "./sprites/pokemon_98.png",
         "national_pokedex_number": 98,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_99": {
@@ -6136,8 +6136,8 @@
         "sprite_path": "./sprites/pokemon_99.png",
         "national_pokedex_number": 99,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_100": {
@@ -6316,8 +6316,8 @@
         "sprite_path": "./sprites/pokemon_102.png",
         "national_pokedex_number": 102,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_103": {
@@ -6378,8 +6378,8 @@
         "sprite_path": "./sprites/pokemon_103.png",
         "national_pokedex_number": 103,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_104": {
@@ -6440,8 +6440,8 @@
         "sprite_path": "./sprites/pokemon_104.png",
         "national_pokedex_number": 104,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_105": {
@@ -6502,8 +6502,8 @@
         "sprite_path": "./sprites/pokemon_105.png",
         "national_pokedex_number": 105,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_106": {
@@ -6564,8 +6564,8 @@
         "sprite_path": "./sprites/pokemon_106.png",
         "national_pokedex_number": 106,
         "gender_rate": {
-            "female": 0,
-            "male": 100
+            "female": 0.0,
+            "male": 100.0
         }
     },
     "pokemon_107": {
@@ -6626,8 +6626,8 @@
         "sprite_path": "./sprites/pokemon_107.png",
         "national_pokedex_number": 107,
         "gender_rate": {
-            "female": 0,
-            "male": 100
+            "female": 0.0,
+            "male": 100.0
         }
     },
     "pokemon_108": {
@@ -6688,8 +6688,8 @@
         "sprite_path": "./sprites/pokemon_108.png",
         "national_pokedex_number": 108,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_109": {
@@ -6750,8 +6750,8 @@
         "sprite_path": "./sprites/pokemon_109.png",
         "national_pokedex_number": 109,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_110": {
@@ -6812,8 +6812,8 @@
         "sprite_path": "./sprites/pokemon_110.png",
         "national_pokedex_number": 110,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_111": {
@@ -6875,8 +6875,8 @@
         "sprite_path": "./sprites/pokemon_111.png",
         "national_pokedex_number": 111,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_112": {
@@ -6938,8 +6938,8 @@
         "sprite_path": "./sprites/pokemon_112.png",
         "national_pokedex_number": 112,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_113": {
@@ -7000,8 +7000,8 @@
         "sprite_path": "./sprites/pokemon_113.png",
         "national_pokedex_number": 113,
         "gender_rate": {
-            "female": 100,
-            "male": 0
+            "female": 100.0,
+            "male": 0.0
         }
     },
     "pokemon_114": {
@@ -7062,8 +7062,8 @@
         "sprite_path": "./sprites/pokemon_114.png",
         "national_pokedex_number": 114,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_115": {
@@ -7124,8 +7124,8 @@
         "sprite_path": "./sprites/pokemon_115.png",
         "national_pokedex_number": 115,
         "gender_rate": {
-            "female": 100,
-            "male": 0
+            "female": 100.0,
+            "male": 0.0
         }
     },
     "pokemon_116": {
@@ -7186,8 +7186,8 @@
         "sprite_path": "./sprites/pokemon_116.png",
         "national_pokedex_number": 116,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_117": {
@@ -7248,8 +7248,8 @@
         "sprite_path": "./sprites/pokemon_117.png",
         "national_pokedex_number": 117,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_118": {
@@ -7310,8 +7310,8 @@
         "sprite_path": "./sprites/pokemon_118.png",
         "national_pokedex_number": 118,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_119": {
@@ -7372,8 +7372,8 @@
         "sprite_path": "./sprites/pokemon_119.png",
         "national_pokedex_number": 119,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_120": {
@@ -7554,8 +7554,8 @@
         "sprite_path": "./sprites/pokemon_122.png",
         "national_pokedex_number": 122,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_123": {
@@ -7617,8 +7617,8 @@
         "sprite_path": "./sprites/pokemon_123.png",
         "national_pokedex_number": 123,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_124": {
@@ -7680,8 +7680,8 @@
         "sprite_path": "./sprites/pokemon_124.png",
         "national_pokedex_number": 124,
         "gender_rate": {
-            "female": 100,
-            "male": 0
+            "female": 100.0,
+            "male": 0.0
         }
     },
     "pokemon_125": {
@@ -7741,8 +7741,8 @@
         "sprite_path": "./sprites/pokemon_125.png",
         "national_pokedex_number": 125,
         "gender_rate": {
-            "female": 25,
-            "male": 75
+            "female": 25.0,
+            "male": 75.0
         }
     },
     "pokemon_126": {
@@ -7802,8 +7802,8 @@
         "sprite_path": "./sprites/pokemon_126.png",
         "national_pokedex_number": 126,
         "gender_rate": {
-            "female": 25,
-            "male": 75
+            "female": 25.0,
+            "male": 75.0
         }
     },
     "pokemon_127": {
@@ -7864,8 +7864,8 @@
         "sprite_path": "./sprites/pokemon_127.png",
         "national_pokedex_number": 127,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_128": {
@@ -7926,8 +7926,8 @@
         "sprite_path": "./sprites/pokemon_128.png",
         "national_pokedex_number": 128,
         "gender_rate": {
-            "female": 0,
-            "male": 100
+            "female": 0.0,
+            "male": 100.0
         }
     },
     "pokemon_129": {
@@ -7987,8 +7987,8 @@
         "sprite_path": "./sprites/pokemon_129.png",
         "national_pokedex_number": 129,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_130": {
@@ -8049,8 +8049,8 @@
         "sprite_path": "./sprites/pokemon_130.png",
         "national_pokedex_number": 130,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_131": {
@@ -8112,8 +8112,8 @@
         "sprite_path": "./sprites/pokemon_131.png",
         "national_pokedex_number": 131,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_132": {
@@ -8232,8 +8232,8 @@
         "sprite_path": "./sprites/pokemon_133.png",
         "national_pokedex_number": 133,
         "gender_rate": {
-            "female": 12,
-            "male": 88
+            "female": 12.5,
+            "male": 87.5
         }
     },
     "pokemon_134": {
@@ -8293,8 +8293,8 @@
         "sprite_path": "./sprites/pokemon_134.png",
         "national_pokedex_number": 134,
         "gender_rate": {
-            "female": 12,
-            "male": 88
+            "female": 12.5,
+            "male": 87.5
         }
     },
     "pokemon_135": {
@@ -8354,8 +8354,8 @@
         "sprite_path": "./sprites/pokemon_135.png",
         "national_pokedex_number": 135,
         "gender_rate": {
-            "female": 12,
-            "male": 88
+            "female": 12.5,
+            "male": 87.5
         }
     },
     "pokemon_136": {
@@ -8415,8 +8415,8 @@
         "sprite_path": "./sprites/pokemon_136.png",
         "national_pokedex_number": 136,
         "gender_rate": {
-            "female": 12,
-            "male": 88
+            "female": 12.5,
+            "male": 87.5
         }
     },
     "pokemon_137": {
@@ -8537,8 +8537,8 @@
         "sprite_path": "./sprites/pokemon_138.png",
         "national_pokedex_number": 138,
         "gender_rate": {
-            "female": 12,
-            "male": 88
+            "female": 12.5,
+            "male": 87.5
         }
     },
     "pokemon_139": {
@@ -8600,8 +8600,8 @@
         "sprite_path": "./sprites/pokemon_139.png",
         "national_pokedex_number": 139,
         "gender_rate": {
-            "female": 12,
-            "male": 88
+            "female": 12.5,
+            "male": 87.5
         }
     },
     "pokemon_140": {
@@ -8663,8 +8663,8 @@
         "sprite_path": "./sprites/pokemon_140.png",
         "national_pokedex_number": 140,
         "gender_rate": {
-            "female": 12,
-            "male": 88
+            "female": 12.5,
+            "male": 87.5
         }
     },
     "pokemon_141": {
@@ -8726,8 +8726,8 @@
         "sprite_path": "./sprites/pokemon_141.png",
         "national_pokedex_number": 141,
         "gender_rate": {
-            "female": 12,
-            "male": 88
+            "female": 12.5,
+            "male": 87.5
         }
     },
     "pokemon_142": {
@@ -8789,8 +8789,8 @@
         "sprite_path": "./sprites/pokemon_142.png",
         "national_pokedex_number": 142,
         "gender_rate": {
-            "female": 12,
-            "male": 88
+            "female": 12.5,
+            "male": 87.5
         }
     },
     "pokemon_143": {
@@ -8851,8 +8851,8 @@
         "sprite_path": "./sprites/pokemon_143.png",
         "national_pokedex_number": 143,
         "gender_rate": {
-            "female": 12,
-            "male": 88
+            "female": 12.5,
+            "male": 87.5
         }
     },
     "pokemon_144": {
@@ -9089,8 +9089,8 @@
         "sprite_path": "./sprites/pokemon_147.png",
         "national_pokedex_number": 147,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_148": {
@@ -9150,8 +9150,8 @@
         "sprite_path": "./sprites/pokemon_148.png",
         "national_pokedex_number": 148,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_149": {
@@ -9212,8 +9212,8 @@
         "sprite_path": "./sprites/pokemon_149.png",
         "national_pokedex_number": 149,
         "gender_rate": {
-            "female": 50,
-            "male": 50
+            "female": 50.0,
+            "male": 50.0
         }
     },
     "pokemon_150": {
