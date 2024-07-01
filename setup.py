@@ -6,7 +6,6 @@ build_dir = "build/QDex"
 base = None
 system_icon = None
 if sys.platform == "win32":
-    build_dir = os.path.join(os.getenv('LOCALAPPDATA'), "programs", "Lagometer")
     base = "Win32GUI"
     system_icon = "icons/icon.ico"
 
